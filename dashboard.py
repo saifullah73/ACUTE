@@ -76,133 +76,134 @@ scatter_fig.update_yaxes(zeroline=True, zerolinecolor='#d6d4d4')
 current_sector = "Islamabad"
 current_theme = "Light"
 
-app.layout = html.Div(children=[
-    html.Div(children=[
+app.layout = html.Div(className='container', id='main_container', children=[
+    html.Div(id='header', children=[
         html.H2(children=["ACUTE Covid Simulation Dashboard"], id='header_main_heading'),
-        html.Div(children=[
+        html.Div(id='header_theme_layout', className='header_theme_layout_class', children=[
             html.Img(id='header_theme_icon'),
             html.H6(children=["Dark Mode"], id='header_theme_title')
-        ], id='header_theme_layout', className='header_theme_layout_class')
-    ], id='header'),
-    html.Div(children=[
-        html.Div(children=[
+        ])
+    ]),
+    html.Div(className='wrapper', children=[
+        html.Div(className='wrapper_div_1', id='wrapper_div_1', children=[
             dcc.Graph(
                 id="all_cases_graph",
                 figure=fig,
-                responsive=True,
                 style={
                     'width': '100%',
                     'height': '100%',
-                }
+                },
+                responsive=True
             )
-        ], className='wrapper_div_1', id='wrapper_div_1'),
-        html.Div(children=[
+        ]),
+        html.Div(className='wrapper_div_2', children=[
 
-            html.Div(children=[
+            html.Div(className='wrapper_div_2_inner', id='wrapper_div_2_inner_1', children=[
 
-                html.Div(children=[
+                html.Div(className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_1_1',
+                         children=[
 
-                    html.P(children=['Active Cases'], style={
-                        'font-family': 'quicksand',
-                        'font-size': '20px',
-                        'color': '#1e88e5',
-                        'margin': '8px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '28px'
-                    }),
-                    html.P(children=["{:,}".format(cases['Islamabad'].max() * 2)], style={
-                        'font-family': 'Quicksand',
-                        'font-size': '40px',
-                        'color': '#1e88e5',
-                        'margin': '0px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '48px'
-                    }, id='active_cases'),
-                    html.P(children=['Recoveries'], style={
-                        'font-family': 'quicksand',
-                        'font-size': '20px',
-                        'color': '#43a047',
-                        'margin': '10px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '28px'
-                    }),
-                    html.P(children=["{:,}".format(int(cases['Islamabad'].max() / 2))], style={
-                        'font-family': 'Quicksand',
-                        'font-size': '40px',
-                        'color': '#43a047',
-                        'margin': '0px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '48px'
-                    }, id='recovered_cases'),
-                    html.P(children=['Deaths'], style={
-                        'font-family': 'quicksand',
-                        'font-size': '20px',
-                        'color': '#f4511e',
-                        'margin': '10px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '28px'
-                    }),
-                    html.P(children=["{:,}".format(int(cases['Islamabad'].max() / 4))], style={
-                        'font-family': 'Quicksand',
-                        'font-size': '40px',
-                        'color': '#f4511e',
-                        'margin': '0px 0px 0px 0px',
-                        'flex': '1',
-                        'max-height': '48px'
-                    }, id='death_cases'),
+                             html.P(children=['Active Cases'], style={
+                                 'font-family': 'quicksand',
+                                 'font-size': '20px',
+                                 'color': '#1e88e5',
+                                 'margin': '8px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '28px'
+                             }),
+                             html.P(children=["{:,}".format(cases['Islamabad'].max() * 2)], style={
+                                 'font-family': 'Quicksand',
+                                 'font-size': '40px',
+                                 'color': '#1e88e5',
+                                 'margin': '0px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '48px'
+                             }, id='active_cases'),
+                             html.P(children=['Recoveries'], style={
+                                 'font-family': 'quicksand',
+                                 'font-size': '20px',
+                                 'color': '#43a047',
+                                 'margin': '10px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '28px'
+                             }),
+                             html.P(children=["{:,}".format(int(cases['Islamabad'].max() / 2))], style={
+                                 'font-family': 'Quicksand',
+                                 'font-size': '40px',
+                                 'color': '#43a047',
+                                 'margin': '0px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '48px'
+                             }, id='recovered_cases'),
+                             html.P(children=['Deaths'], style={
+                                 'font-family': 'quicksand',
+                                 'font-size': '20px',
+                                 'color': '#f4511e',
+                                 'margin': '10px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '28px'
+                             }),
+                             html.P(children=["{:,}".format(int(cases['Islamabad'].max() / 4))], style={
+                                 'font-family': 'Quicksand',
+                                 'font-size': '40px',
+                                 'color': '#f4511e',
+                                 'margin': '0px 0px 0px 0px',
+                                 'flex': '1',
+                                 'max-height': '48px'
+                             }, id='death_cases'),
 
-                ], className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_1_1'),
-                html.Div(children=[
+                         ]),
+                html.Div(className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_1_2',
+                         children=[
 
-                    dcc.Graph(
-                        id="sector_line_chart",
-                        figure=line_graph,
-                        style={
-                            'width': '100%',
-                            'height': '100%',
-                        },
-                        responsive=True
-                    )
+                             dcc.Graph(
+                                 id="sector_line_chart",
+                                 figure=line_graph,
+                                 style={
+                                     'width': '100%',
+                                     'height': '100%',
+                                 },
+                             )
 
-                ], className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_1_2'),
+                         ]),
 
-            ], style={}, className='wrapper_div_2_inner'),
+            ]),
 
-            html.Div(children=[
+            html.Div(className='wrapper_div_2_inner', id='wrapper_div_2_inner_2', children=[
 
-                html.Div(children=[
+                html.Div(className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_2_1',
+                         children=[
 
-                    dcc.Graph(
-                        id="ages_chart",
-                        figure=bar_chart,
-                        style={
-                            'width': '100%',
-                            'height': '100%',
-                        },
-                        responsive=True
-                    )
+                             dcc.Graph(
+                                 id="ages_chart",
+                                 figure=bar_chart,
+                                 style={
+                                     'width': '100%',
+                                     'height': '100%',
+                                 },
+                             )
 
-                ], className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_2_1'),
-                html.Div(children=[
+                         ]),
+                html.Div(className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_2_2',
+                         children=[
 
-                    dcc.Graph(
-                        id="scatter_graph",
-                        figure=scatter_fig,
-                        style={
-                            'width': '100%',
-                            'height': '100%',
-                        },
-                        responsive=True
-                    )
+                             dcc.Graph(
+                                 id="scatter_graph",
+                                 figure=scatter_fig,
+                                 style={
+                                     'width': '100%',
+                                     'height': '100%',
+                                 },
+                             )
 
-                ], className='wrapper_div_2_inner_final_inner', id='wrapper_div_2_inner_final_inner_2_2'),
+                         ]),
 
-            ], style={}, className='wrapper_div_2_inner')
+            ])
 
-        ], className='wrapper_div_2')
-    ], className='wrapper')
+        ])
+    ])
 ], style={
-}, className='container', id='main_container')
+})
 
 
 @app.callback(
@@ -250,7 +251,8 @@ def update_main_style(n_clicks, clickData):
 
             line_graph.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#28293e",
                                      paper_bgcolor="#28293e",
-                                     xaxis_title='Day', yaxis_title='Cases per day (Islamabad)', font_color='#3a9d6e')
+                                     xaxis_title='Day', yaxis_title='Cases per day (' + current_sector + ')',
+                                     font_color='#3a9d6e')
             line_graph.update_traces(line=dict(color="#f4511e"))
             line_graph.update_xaxes(showgrid=True, gridcolor='#f9f9f9')
             line_graph.update_yaxes(showgrid=True, gridcolor='#f9f9f9')
@@ -259,7 +261,7 @@ def update_main_style(n_clicks, clickData):
 
             bar_chart.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#28293e",
                                     paper_bgcolor="#28293e",
-                                    xaxis_title='Ages', yaxis_title='Number of people (Islamabad)',
+                                    xaxis_title='Ages', yaxis_title='Number of people (' + current_sector + ')',
                                     font_color='#3a9d6e')
             bar_chart.update_traces(marker_color='#f4511e')
             bar_chart.update_xaxes(showgrid=True, gridcolor='#f9f9f9')
@@ -290,14 +292,15 @@ def update_main_style(n_clicks, clickData):
 
             line_graph.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#f9f9f9",
                                      paper_bgcolor="#f9f9f9",
-                                     xaxis_title='Day', yaxis_title='Cases per day (Islamabad)', font_color='#3a9d6e')
+                                     xaxis_title='Day', yaxis_title='Cases per day (' + current_sector + ')',
+                                     font_color='#3a9d6e')
             line_graph.update_traces(line=dict(color="#3a9d6e"))
             line_graph.update_xaxes(showgrid=True, gridcolor='#d6d4d4')
             line_graph.update_yaxes(showgrid=True, gridcolor='#d6d4d4')
 
             bar_chart.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0}, plot_bgcolor="#f9f9f9",
                                     paper_bgcolor="#f9f9f9",
-                                    xaxis_title='Ages', yaxis_title='Number of people (Islamabad)',
+                                    xaxis_title='Ages', yaxis_title='Number of people (' + current_sector + ')',
                                     font_color='#3a9d6e')
             bar_chart.update_traces(marker_color='#3a9d6e')
             bar_chart.update_xaxes(showgrid=True, gridcolor='#d6d4d4')
@@ -327,7 +330,8 @@ def update_main_style(n_clicks, clickData):
         line_graph.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                  plot_bgcolor="#f9f9f9" if current_theme == "Light" else "#28293e",
                                  paper_bgcolor="#f9f9f9" if current_theme == "Light" else "#28293e",
-                                 xaxis_title='Day', yaxis_title='Cases per day (Islamabad)', font_color='#3a9d6e')
+                                 xaxis_title='Day', yaxis_title='Cases per day (' + current_sector + ')',
+                                 font_color='#3a9d6e')
         line_graph.update_traces(line=dict(color="#3a9d6e" if current_theme == "Light" else "#f4511e"))
         bar_chart.update_xaxes(showgrid=True, gridcolor="#d6d4d4" if current_theme == "Light" else "#f9f9f9")
         bar_chart.update_yaxes(showgrid=True, gridcolor="#d6d4d4" if current_theme == "Light" else "#f9f9f9")
@@ -338,7 +342,7 @@ def update_main_style(n_clicks, clickData):
         bar_chart.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0},
                                 plot_bgcolor="#f9f9f9" if current_theme == "Light" else "#28293e",
                                 paper_bgcolor="#f9f9f9" if current_theme == "Light" else "#28293e",
-                                xaxis_title='Ages', yaxis_title='Number of people (Islamabad)',
+                                xaxis_title='Ages', yaxis_title='Number of people (' + current_sector + ')',
                                 font_color='#3a9d6e')
         bar_chart.update_traces(marker_color="#3a9d6e" if current_theme == "Light" else "#f4511e")
         bar_chart.update_xaxes(showgrid=True, gridcolor="#d6d4d4" if current_theme == "Light" else "#f9f9f9")
