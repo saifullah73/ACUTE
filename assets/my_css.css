@@ -253,6 +253,11 @@ body {
     #header_main_heading, #header_main_heading_dark {
         margin-bottom: 24px;
     }
+
+    .wrapper_div_2_inner_final_inner, .wrapper_div_2_inner_final_inner_dark {
+         min-width: 190px;
+         min-height: 190px;
+    }
 }
 
 

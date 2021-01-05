@@ -365,4 +365,4 @@ def update_main_style(n_clicks, clickData):
 
 
 if __name__ == '__main__':
-    app.run_server(port=8060)
+    app.run_server(port=8070)
