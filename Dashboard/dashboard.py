@@ -225,8 +225,8 @@ app.layout = html.Div(className='container', id='main_container', children=[
      Output('recovered_cases', 'children'),
      Output('death_cases', 'children')
      ],
-    Input('header_theme_layout', 'n_clicks'),
-    Input('all_cases_graph', 'clickData')
+    [Input('header_theme_layout', 'n_clicks'),
+    Input('all_cases_graph', 'clickData')]
 )
 def update_main_style(n_clicks, clickData):
     trigger = dash.callback_context.triggered[0]['prop_id'].split('.')[0]
