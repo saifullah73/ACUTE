@@ -27,6 +27,6 @@ Please note that the notebook cells should be executed in sequence and they are 
 
 ## Performing Result Comparisons
 Results comparison is performed via the Compare_Results.ipynb notebook. The notebook accepts a Data.zip file as input containing the simulation results and actual data.  
-Data.zip is already provided. It contains the simulation results that were compared to actual data and presented in FYP reports. The actual data for Abbottbad comes from Ayub Teaching Hospital while acutal data for Islamabd is scrapped from covid.gov.pk website.  
-Please note that the notebook is capable of running without any code changes. But you do need to change the filenames being read if data is updated.   
-If you want to compare data with your own simulation results, unzip the Data.zup folder add the output files under respective city directory rezip and upload to collab
+Data.zip is already provided. It contains the simulation results that were compared to actual data and presented in FYP reports. The actual data for Abbottbad comes from Ayub Teaching Hospital while actual data for Islamabad is scrapped from covid.gov.pk website. Only the Abbottabad results are reported in the final FYP report, although the Islamabad comparisons are also available for study. 
+Please note that the notebook is capable of running without any code changes. But you do need to change the filenames being read, if data is updated.   
+If you want to compare data with your own simulation results, unzip the Data.zip folder, add the output files under respective city directory, rezip and upload to collab
