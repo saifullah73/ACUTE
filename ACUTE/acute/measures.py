@@ -35,6 +35,7 @@ def template_abbottabad(e,t):
   # if t == (274 - constant):
   #   e.add_closure("school", 0)  # schools closed on november 24th
 
+# the following lockdown is scenario is specific to abbottabad only
 def abbottabad_lockdown(e,t):
   e.hospital_protection_factor = 0.8
   e.track_trace_multiplier = 0.8
@@ -66,7 +67,7 @@ def automatic_smart_lockdown(e,t,threshold,days = 7):
       print(region + " under lockdown-strength= "+str(strength)+" days= "+str(days))
       e.add_region_under_lockdown(region,1,days)
 
-
+# the following lockdown is scenario is specific to islamabad only
 # First case recorded in Pakistan on Feburary 26th, and we start our simulation from here (20 days for warmup are performed prior)
 def smart_lockdown_hard_islamabad(e,t):
   e.hospital_protection_factor = 0.4

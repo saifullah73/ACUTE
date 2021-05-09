@@ -126,6 +126,8 @@ if __name__ == "__main__":
       # end_time = 730
     elif transition_scenario in ['smart-lockdown','abbottabad-lockdown']:
         end_time = 365
+
+
     end_time = 365 # for a full year
 
     print("Running basic Covid-19 simulation kernel.")
