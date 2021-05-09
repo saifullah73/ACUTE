@@ -39,22 +39,17 @@ import numpy as np
 
 df_name = []
 df_list = []
-df = pd.read_csv('sample_output/covid_out_infections.csv')
+df = pd.read_csv('sample_output/covid_out_infections_small.csv')
 columns = ["time",  "x", "y", "type"]
 df.columns = columns
 for column in df:
     df_name.append(column)
 df_list.append(df)
 
-
-
-
 df = pd.concat(df_list, axis=1, ignore_index=True)
 df.columns = df_name
 # df = df[(df['time']>0) & (df['time']<=414)]
 df = df[(df['time']>0)]
-
-
 
 
 #create dataframe for each day
@@ -73,28 +68,16 @@ y = cdf['y'].mean()
 print(x,y)
 cdf['size'] = 1
 
-# cdf2 = cdf[(cdf['time']<=20)]
-# cdf2['type'].unique()
-
-# color_discrete_map = {'house': px.colors.qualitative.G10[1],
-#                       'office': px.colors.qualitative.G10[5],
-#                       'shopping': px.colors.qualitative.G10[2],
-#                       'school': px.colors.qualitative.G10[4],
-#                       'leisure': px.colors.qualitative.G10[3],
-#                       'park': px.colors.qualitative.G10[7],
-#                       'hospital': px.colors.qualitative.G10[6],
-#                       'traffic': px.colors.qualitative.G10[0],
-#                       'place_of_worship': px.colors.qualitative.G10[8]}
 
 color_discrete_map = {'house': px.colors.qualitative.G10[1],
-                      'office': px.colors.qualitative.G10[2],
-                      'shopping': px.colors.qualitative.G10[3],
+                      'office': px.colors.qualitative.G10[5],
+                      'shopping': px.colors.qualitative.G10[2],
                       'school': px.colors.qualitative.G10[4],
-                      'leisure': px.colors.qualitative.G10[5],
-                      'park': px.colors.qualitative.G10[6],
-                      'hospital': px.colors.qualitative.G10[7],
-                      'traffic': px.colors.qualitative.G10[8],
-                      'place_of_worship': px.colors.qualitative.G10[9]}
+                      'leisure': px.colors.qualitative.G10[3],
+                      'park': px.colors.qualitative.G10[7],
+                      'hospital': px.colors.qualitative.G10[6],
+                      'traffic': px.colors.qualitative.G10[0],
+                      'place_of_worship': px.colors.qualitative.G10[8]}
 
 
 fig = px.scatter_mapbox(
@@ -107,39 +90,9 @@ fig = px.scatter_mapbox(
     animation_frame="time", animation_group="time",
 )
 
-
-# fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 200
-# fig.layout.updatemenus[0].buttons[0].args[1]["transition"]["duration"] = 200
-# # fig.layout.coloraxis.showscale = True
-# fig.layout.sliders[0].pad.t = 0
-# fig.layout.sliders[0].x = 0
-# fig.layout.sliders[0].y = -0.1
-# fig.layout.updatemenus[0].pad.t= 0
-# fig["layout"].pop("updatemenus")
-# fig.layout.mapbox={
-#                       'accesstoken':'pk.eyJ1IjoiaW1haG1vb2QiLCJhIjoiY2tjdnE0MDBjMDZuYjJ6cXY2aGE4OWN2aCJ9.bRfBBl_o-iRCv90oKtqdsA',
-#                       'center':{"lat": y, "lon":x},
-#                       'zoom':11,
-#                       'style':'open-street-map'
-#                   }
-# fig.update_layout(
-#     title='Islamabad - Locationwise Infected Cases per day',
-#     width = 1024,
-#     height = 600,
-#     legend=dict(
-#         title = 'Building Type',
-#         orientation="h",
-#         y=0,
-#         x=0,
-#         traceorder='reversed'
-#     )
-# )
-# py.offline.plot(fig, filename='scatter_animate.html')
-# fig.show()
-
 fig.layout.updatemenus[0].buttons[0].args[1]["frame"]["duration"] = 200
 fig.layout.updatemenus[0].buttons[0].args[1]["transition"]["duration"] = 200
-fig.layout.coloraxis.showscale = True
+# fig.layout.coloraxis.showscale = True
 fig.layout.sliders[0].pad.t = 0
 fig.layout.sliders[0].x = 0
 fig.layout.sliders[0].y = -0.1
@@ -147,15 +100,13 @@ fig.layout.updatemenus[0].pad.t= 0
 fig["layout"].pop("updatemenus")
 fig.layout.mapbox={
                       'accesstoken':'pk.eyJ1IjoiaW1haG1vb2QiLCJhIjoiY2tjdnE0MDBjMDZuYjJ6cXY2aGE4OWN2aCJ9.bRfBBl_o-iRCv90oKtqdsA',
-                      'center':{"lat":y, "lon":x},
+                      'center':{"lat": y, "lon":x},
                       'zoom':11,
                       'style':'open-street-map'
                   }
-
-
 fig.update_layout(
     title='Islamabad - Locationwise Infected Cases per day',
-    width = 1280,
+    width = 1024,
     height = 600,
     legend=dict(
         title = 'Building Type',
@@ -166,4 +117,4 @@ fig.update_layout(
     )
 )
 py.offline.plot(fig, filename='scatter_animate.html')
-# fig.show()
+fig.show()
