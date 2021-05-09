@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="_x31_"
-   enable-background="new 0 0 24 24"
-   height="512"
-   viewBox="0 0 24 24"
-   width="512"
-   version="1.1"
-   sodipodi:docname="night-mode.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+        xmlns="http://www.w3.org/2000/svg"
+        id="_x31_"
+        enable-background="new 0 0 24 24"
+        height="512"
+        viewBox="0 0 24 24"
+        width="512"
+        version="1.1"
+        sodipodi:docname="night-mode.svg"
+        inkscape:version="0.92.3 (2405546, 2018-03-11)">
   <metadata
-     id="metadata5137">
+          id="metadata5137">
     <rdf:RDF>
       <cc:Work
-         rdf:about="">
+              rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
       </cc:Work>
     </rdf:RDF>
   </metadata>
