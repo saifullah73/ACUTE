@@ -27,7 +27,7 @@ islamabad-smart-lockdown-27.csv
 
 
 We also included a simple plotting script. This can be called e.g. as follows:
-`python3 PlotSEIR.py test-extend-lockdown-62.csv test`
+`python3 PlotSEIR.py islamabad-smart-lockdown-27.csv islamabad`
 
 ## Advanced usage
 
