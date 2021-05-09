@@ -21,5 +21,12 @@ it can be run using the following command
 eg `python3 hotspotmap.py sample_output/cases_in_regions.csv areas/abbottabad.areas.json static`   
 
 ## Generating a Location-wise infection graph
-To generate a location-wise infection graph you need to use the ScatterAnimate.py script.  
+To generate a location-wise infection graph you need to use the scatter_animate.ipynb jupyter notebook  
+It takes as input a covid_out_infection.csv file. A sample file covid_out_infections_small.csv is provided under sample_output directory.  
+Please note that the notebook cells should be executed in sequence and they are capable of running without code changes. But if required, title of graphs can be changed. 
 
+## Performing Result Comparisons
+Results comparison is performed via the Compare_Results.ipynb notebook. The notebook accepts a Data.zip file as input containing the simulation results and actual data.  
+Data.zip is already provided. It contains the simulation results that were compared to actual data and presented in FYP reports. The actual data for Abbottbad comes from Ayub Teaching Hospital while acutal data for Islamabd is scrapped from covid.gov.pk website.  
+Please note that the notebook is capable of running without any code changes. But you do need to change the filenames being read if data is updated.   
+If you want to compare data with your own simulation results, unzip the Data.zup folder add the output files under respective city directory rezip and upload to collab
